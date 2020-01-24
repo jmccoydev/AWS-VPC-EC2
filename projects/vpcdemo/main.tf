@@ -1,8 +1,6 @@
 provider "aws" {
   region = "us-east-2"
-  access_key = ""
-  secret_key = ""
-}
+  }
 
 module "project_satellite_vpc" {
   source          = "../../modules/satellite_vpc"
