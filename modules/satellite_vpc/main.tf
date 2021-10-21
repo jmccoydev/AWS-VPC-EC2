@@ -150,35 +150,3 @@ resource "aws_route53_resolver_endpoint" "inbound_forward" {
     }
   }
 }
-
-##################################################
-# FORWARDING RULES
-##################################################
-#
-#resource "aws_route53_resolver_rule" "fwd" {
-#  domain_name          = "cas.org"
-#  name                 = "CAS"
-#  rule_type            = "FORWARD"
-#  resolver_endpoint_id = "${aws_route53_resolver_endpoint.outbound_forward.id}"
-#
-#  target_ip {
-#    ip = "134.243.50.56"
-#  }
-#
-#  target_ip {
-#    ip = "134.243.50.57"
-#  }
-#
-#  target_ip {
-#    ip = "134.243.50.19"
-#  }
-#}
-
-##################################################
-# FORWARDING RULES ASSOCIATIONS
-##################################################
-
-#resource "aws_route53_resolver_rule_association" "vpcforward" {
-#  resolver_rule_id = "${aws_route53_resolver_rule.fwd.id}"
-#  vpc_id           = "${aws_vpc.satellite.id}"
-#}
